@@ -11,21 +11,22 @@ public class RPNCalculator {
         if (!operations.isEmpty()) {
             try {
                 numbersStack = calculateOperations(numbersStack, operations);
-            } catch (Exception e) {
-                operations.remove(operations.size() - 1);
+            } catch (NotEnoughNumbersException e) {
+                System.out.println(e.getMessage());
+                operations.remove(operations.size() - 1); // Cleanup operations
             }
         }
         return numbersStack;
     }
 
-    private Stack<Integer> calculateOperations(Stack<Integer> numbersStack, List<Operation> operations) throws Exception {
+    private Stack<Integer> calculateOperations(Stack<Integer> numbersStack, List<Operation> operations) throws NotEnoughNumbersException {
         Iterator<Operation> iterator = operations.iterator();
         while (iterator.hasNext()) {
             if (numbersStack.size() <= 1) {
-                throw new Exception("No more numberes hombre, fuck sake");
+                throw new NotEnoughNumbersException("Not enough number on the stack!");
             }
-            Integer number1 = numbersStack.pop();
             Integer number2 = numbersStack.pop();
+            Integer number1 = numbersStack.pop();
             Operation operation = iterator.next();
             numbersStack.push(operation.evaluate(number2, number1));
             iterator.remove();
