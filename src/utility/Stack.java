@@ -2,11 +2,11 @@ package utility;
 
 public interface Stack<T> {
 
-    public void push(T element);
+    void push(T element);
 
-    public T pop();
+    T pop();
 
-    public T peek();
+    T peek();
 
-    public int size();
+    int size();
 }

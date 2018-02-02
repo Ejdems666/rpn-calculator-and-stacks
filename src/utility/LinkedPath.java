@@ -22,6 +22,6 @@ public class LinkedPath<T> implements Path<T> {
     @Override
     public String toString() {
         if (rest == null) return "> "+first;
-        return "> "+first+"\n"+rest.toString();
+        return rest.toString()+"\n"+"> "+first;
     }
 }

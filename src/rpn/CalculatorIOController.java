@@ -4,6 +4,7 @@ import rpn.operations.Operation;
 import rpn.parser.Parser;
 import rpn.parser.ParserException;
 import utility.ArrayStack;
+import utility.PathStack;
 import utility.Stack;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class CalculatorIOController {
     }
 
     public void start() {
-        Stack<Integer> numbersStack = new ArrayStack<>();
+        Stack<Integer> numbersStack = new PathStack<>();
         List<Operation> operations = new ArrayList<>();
         while (true) {
             String consoleInput = scanner.nextLine();
