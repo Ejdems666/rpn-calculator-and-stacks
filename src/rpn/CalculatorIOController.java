@@ -4,7 +4,6 @@ import rpn.operations.Operation;
 import rpn.parser.Parser;
 import rpn.parser.ParserException;
 import utility.ArrayStack;
-import utility.PathStack;
 import utility.Stack;
 
 import java.util.ArrayList;
@@ -32,9 +31,9 @@ public class CalculatorIOController {
             }
             String[] rawArguments = consoleInput.split(" ");
             int oldSize = numbersStack.size();
-            numbersStack = parser.parseNumbers(numbersStack, rawArguments);
+            numbersStack = parser.addNumbers(numbersStack, rawArguments);
             int countOfAddedNumbers = numbersStack.size() - oldSize;
-            operations = parser.parseOperations(operations, countOfAddedNumbers, rawArguments);
+            operations = parser.addOperations(operations, countOfAddedNumbers, rawArguments);
             numbersStack = calculator.calculate(numbersStack, operations);
             System.out.println(numbersStack);
         }

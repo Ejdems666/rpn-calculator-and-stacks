@@ -6,7 +6,7 @@ import utility.Stack;
 import java.util.List;
 
 public class Parser {
-    public Stack<Integer> parseNumbers(Stack<Integer> numbers, String[] rawArguments) {
+    public Stack<Integer> addNumbers(Stack<Integer> numbers, String[] rawArguments) {
         for (String rawConsoleArgument : rawArguments) {
             try {
                 Integer number = Integer.parseInt(rawConsoleArgument);
@@ -18,7 +18,7 @@ public class Parser {
         return numbers;
     }
 
-    public List<Operation> parseOperations(List<Operation> operations, int countOfAddedNumbers, String[] rawConsoleArguments) throws ParserException {
+    public List<Operation> addOperations(List<Operation> operations, int countOfAddedNumbers, String[] rawConsoleArguments) throws ParserException {
         for (int i = countOfAddedNumbers; i < rawConsoleArguments.length; i++) {
             switch (rawConsoleArguments[i]) {
                 case "*":
