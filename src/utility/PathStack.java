@@ -8,9 +8,9 @@ public class PathStack<T> implements Stack<T> {
     @Override
     public void push(T element) {
         if (data == null) {
-            data = new GenericPath<>(element, null);
+            data = new LinkedPath<>(element, null);
         } else {
-            data = new GenericPath<>(element, data);
+            data = new LinkedPath<>(element, data);
         }
         size++;
     }

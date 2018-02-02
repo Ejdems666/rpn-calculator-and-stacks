@@ -1,10 +1,10 @@
 package utility;
 
-public class GenericPath<T> implements Path<T> {
+public class LinkedPath<T> implements Path<T> {
     private T first;
     private Path<T> rest;
 
-    public GenericPath(T first, Path<T> rest) {
+    public LinkedPath(T first, Path<T> rest) {
         this.first = first;
         this.rest = rest;
     }
