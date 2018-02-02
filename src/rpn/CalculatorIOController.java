@@ -21,7 +21,7 @@ public class CalculatorIOController {
         this.scanner = scanner;
     }
 
-    public void start() throws ParserException {
+    public void start() {
         Stack<Integer> numbersStack = new ArrayStack<>();
         List<Operation> operations = new ArrayList<>();
         while (true) {
@@ -29,13 +29,17 @@ public class CalculatorIOController {
             if (consoleInput.equals("END")) {
                 break;
             }
-            String[] rawArguments = consoleInput.split(" ");
-            int oldSize = numbersStack.size();
-            numbersStack = parser.addNumbers(numbersStack, rawArguments);
-            int countOfAddedNumbers = numbersStack.size() - oldSize;
-            operations = parser.addOperations(operations, countOfAddedNumbers, rawArguments);
-            numbersStack = calculator.calculate(numbersStack, operations);
-            System.out.println(numbersStack);
+            try {
+                String[] rawArguments = consoleInput.split(" ");
+                int oldSize = numbersStack.size();
+                numbersStack = parser.addNumbers(numbersStack, rawArguments);
+                int countOfAddedNumbers = numbersStack.size() - oldSize;
+                operations = parser.addOperations(operations, countOfAddedNumbers, rawArguments);
+                numbersStack = calculator.calculate(numbersStack, operations);
+                System.out.println(numbersStack);
+            } catch (ParserException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ public class PathStack<T> implements Stack<T> {
 
     @Override
     public T pop() {
+        if (data == null) return null;
         T first = peek();
         data = data.getRest();
         size--;
