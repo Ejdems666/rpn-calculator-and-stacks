@@ -2,9 +2,8 @@ package rpn;
 
 import rpn.parser.Parser;
 import rpn.parser.ParserException;
-import rpn.parser.operations.Operation;
+import rpn.operations.Operation;
 import utility.ArrayStack;
-import utility.PathStack;
 import utility.Stack;
 
 import java.util.*;

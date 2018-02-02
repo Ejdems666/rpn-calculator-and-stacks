@@ -1,10 +1,9 @@
 package rpn.parser;
 
-import rpn.parser.operations.*;
+import rpn.operations.*;
 import utility.Stack;
 
 import java.util.List;
-import java.util.TreeSet;
 
 public class Parser {
     public Stack<Integer> parseNumbers(Stack<Integer> numbers, String[] rawArguments) {
