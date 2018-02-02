@@ -3,6 +3,7 @@ package rpn;
 import rpn.operations.Operation;
 import rpn.parser.Parser;
 import rpn.parser.ParserException;
+import utility.ArrayStack;
 import utility.PathStack;
 import utility.Stack;
 
@@ -22,7 +23,7 @@ public class CalculatorIOController {
     }
 
     public void start() throws ParserException {
-        Stack<Integer> numbersStack = new PathStack<>();
+        Stack<Integer> numbersStack = new ArrayStack<>();
         List<Operation> operations = new ArrayList<>();
         while (true) {
             String consoleInput = scanner.nextLine();

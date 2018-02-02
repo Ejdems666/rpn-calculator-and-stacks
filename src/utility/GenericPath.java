@@ -18,4 +18,10 @@ public class GenericPath<T> implements Path<T> {
     public Path<T> getRest() {
         return rest;
     }
+
+    @Override
+    public String toString() {
+        if (rest == null) return "> "+first;
+        return "> "+first+"\n"+rest.toString();
+    }
 }
