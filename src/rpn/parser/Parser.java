@@ -1,5 +1,6 @@
 package rpn.parser;
 
+import rpn.exceptions.ParserException;
 import rpn.operations.*;
 import utility.Stack;
 

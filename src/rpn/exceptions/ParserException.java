@@ -1,4 +1,4 @@
-package rpn.parser;
+package rpn.exceptions;
 
 public class ParserException extends Exception {
     public ParserException(String message) {
