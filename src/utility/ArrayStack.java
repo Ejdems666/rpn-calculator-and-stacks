@@ -33,7 +33,7 @@ public class ArrayStack<T> implements Stack<T> {
     @Override
     public T peek() {
         if (top == 0) return null;
-        return data[top-1];
+        return data[top - 1];
     }
 
     @Override

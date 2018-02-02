@@ -3,7 +3,7 @@ package rpn;
 import rpn.parser.Parser;
 import rpn.parser.ParserException;
 
-import java.util.*;
+import java.util.Scanner;
 
 
 public class Main {
@@ -11,9 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
         RPNCalculator calculator = new RPNCalculator();
-        CalculatorIOController controller = new CalculatorIOController(calculator,parser,scanner);
+        CalculatorIOController controller = new CalculatorIOController(calculator, parser, scanner);
         controller.start();
     }
-
-
 }

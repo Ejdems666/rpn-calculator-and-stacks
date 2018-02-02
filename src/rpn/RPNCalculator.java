@@ -12,7 +12,7 @@ public class RPNCalculator {
             try {
                 numbersStack = calculateOperations(numbersStack, operations);
             } catch (Exception e) {
-                operations.remove(operations.size()-1);
+                operations.remove(operations.size() - 1);
             }
         }
         return numbersStack;
@@ -27,7 +27,7 @@ public class RPNCalculator {
             Integer number1 = numbersStack.pop();
             Integer number2 = numbersStack.pop();
             Operation operation = iterator.next();
-            numbersStack.push(operation.evaluate(number2,number1));
+            numbersStack.push(operation.evaluate(number2, number1));
             iterator.remove();
         }
         return numbersStack;
