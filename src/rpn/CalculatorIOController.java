@@ -2,7 +2,7 @@ package rpn;
 
 import rpn.exceptions.NotEnoughNumbersException;
 import rpn.operations.*;
-import rpn.exceptions.ParserException;
+import rpn.exceptions.OperationParsingException;
 import utility.PathStack;
 import utility.Stack;
 
@@ -45,12 +45,12 @@ public class CalculatorIOController {
                                 operation = new Substitution();
                                 break;
                             default:
-                                throw new ParserException("Unknown operation!");
+                                throw new OperationParsingException("Unknown operation!");
                         }
                         numbersStack = calculator.calculate(numbersStack, operation);
                     }
                 }
-            } catch (NotEnoughNumbersException | ParserException e) {
+            } catch (NotEnoughNumbersException | OperationParsingException e) {
                 System.out.println(e.getMessage());
             }
             System.out.println(numbersStack);
